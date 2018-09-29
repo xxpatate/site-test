@@ -1,0 +1,58 @@
+My Drive
+
+
+.cube {
+	margin: 30px auto;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	font-family: Arial,Helvetica, sans-serif;
+	text-shadow: 1px 1px 1px #383737;
+	color: white;
+	text-align: center;
+}
+
+.cube h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.cube h2 {
+	margin: 0;
+	padding: 16px 0 2px;
+}
+
+.cube p {
+	padding: 5px 10px;
+	margin: 0;
+}
+
+.default-state,
+.active-state {
+	height: 300px;
+	position: absolute;
+	left: 0;
+	top: 0;
+  margin: 30px auto;
+	transition: transform 0.4s ease;
+	transform-origin: center center -150px;
+	webkit-transform-origin: center center -150px;
+	width: 100%;
+}
+
+.default-state {
+	transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.active-state {
+	transform: perspective(1000px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.cube:hover .default-state {
+	transform: perspective(1000px) rotateX(90deg) rotateY(0) rotateZ(0deg);
+}
+
+.cube:hover .active-state {
+	z-index: 99999;
+	transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0);
+}
